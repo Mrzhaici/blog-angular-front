@@ -9,9 +9,8 @@ export const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./routes/home/home.routes').then(mod => mod.HomeRoutes),
-    data: {
-    }
-  }
+    title: 'nihao'
+  },
 ];
 
 

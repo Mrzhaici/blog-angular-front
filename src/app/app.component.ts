@@ -9,6 +9,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { en_US, zh_CN } from 'ng-zorro-antd/i18n';
 import zh from '@angular/common/locales/zh';
 import en from '@angular/common/locales/en';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
 
 @Component({
   selector: 'app-root',
@@ -20,13 +21,15 @@ import en from '@angular/common/locales/en';
     HeaderComponent,
     FooterComponent,
     NzSharedModule,
-    TranslateModule
+    TranslateModule,
+    NzLayoutModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.less',
 })
 export class AppComponent {
 
+  // TODO: 暂时只支持中文
   private LANGS: { [key: string]: any } = {
     zh_CN: {
       i18n: zh_CN,
@@ -40,11 +43,9 @@ export class AppComponent {
   };
 
   constructor(public translate: TranslateService) {
-    translate.addLangs(['zh_cn']);
-    translate.setDefaultLang('zh_cn');
-    // const browserLang = translate.getBrowserLang();
-    // console.log('browserLang:', browserLang);
-    translate.use('zh_cn');
+    translate.addLangs(['zh_CN']);
+    translate.setDefaultLang('zh_CN');
+    translate.use('zh_CN');
   }
 
 }

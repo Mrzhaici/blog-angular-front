@@ -1,4 +1,9 @@
-<blog-header></blog-header>
-<router-outlet></router-outlet>
-<blog-footer></blog-footer>
-<h2>{{ 'HOME.HOUSE' | translate }}</h2>
+<nz-layout>
+  <nz-header>
+    <blog-header></blog-header>
+  </nz-header>
+  <nz-content>
+    <router-outlet></router-outlet>
+  </nz-content>
+  <nz-footer><blog-footer></blog-footer></nz-footer>
+</nz-layout>
